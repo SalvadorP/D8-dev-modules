@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+# DEV Modules
 
-You can use the [editor on GitHub](https://github.com/SalvadorP/D8-dev-modules/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Dev Favorites Module
+Provides a way for users to mark as favorite a node, similar to what flag module does but integrating ReactJS inside the module/feature.
+Code got from [Zivtech Getting started with React and D8](https://www.zivtech.com/blog/getting-started-react-drupal-8-and-jsonapi?utm_source=drupal-newsletter&utm_medium=email&utm_campaign=drupal-newsletter-20170713)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Explanation of the module structure
+#### Config/Install
+##### Field Favorites
+1. **field.storage.user.field_favorites.yml** This file provides the field *field_favorites* storage, defines it on the database, it's of type entity_reference.
+2. **field.field.user.user.field_favorites.yml** This file provides the field *field_favorites* at the user module
 
-### Markdown
+####  Src/Controller
+##### Favorite Controller
+This controller provides an interface for getting the Data, it receives the node and responds in JSON format with the user related data like user_uid, node_type and if it's a favorited node.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### dev_favorites.module
+Adds a div with the id favorite in each node in full view mode.
+Defines a library called favorite/favorite, the module will require this library.
+To let Drupal know where the library is, the file dev_favorite.libraries.yml is created.
+This library will define/hold all the JS we need in the module.
 
-```markdown
-Syntax highlighted code block
+#### dev_favorites.libraries.yml
+Defines the route of the JS libraries.
 
-# Header 1
-## Header 2
-### Header 3
+#### dev_favorites.routing.yml
+Defines the route to get the favorite data
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SalvadorP/D8-dev-modules/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
