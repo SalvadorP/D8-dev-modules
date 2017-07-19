@@ -3,7 +3,7 @@
 /**
  * Implements template_preprocess_node().
  */
-function favorite_preprocess_node(&$variables)
+function dev_favorites_preprocess_node(&$variables)
 {
   // Adds a div with the id favorite in each node in full view mode.
   $node = $variables['node'];
