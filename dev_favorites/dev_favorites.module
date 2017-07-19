@@ -11,7 +11,7 @@ function dev_favorites_preprocess_node(&$variables)
     // We define a library called favorite/favorite, the module requires this library.
     // To let Drupal know where the library is, we create the file dev_favorite.libraries.yml.
     // This library will define/hold all the JS we need in the module.
-    $variables['#attached']['library'][] = 'favorite/favorite';
+    $variables['#attached']['library'][] = 'dev_favorites/favorites';
     $variables['content']['favorite'] = array(
     '#markup' => '<div id="favorite"></div>',
     );
