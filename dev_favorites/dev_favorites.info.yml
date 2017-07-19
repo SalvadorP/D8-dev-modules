@@ -1,0 +1,8 @@
+name: Favorites
+description: 'Provides a way to mark a node as favorite integrating ReactJS'
+type: module
+core: 8.x
+version: 8.x-1.0
+package: Dev
+dependencies:
+  - jsonapi

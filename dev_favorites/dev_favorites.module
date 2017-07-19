@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements template_preprocess_node().
+ */
+function favorite_preprocess_node(&$variables)
+{
+  // Adds a div with the id favorite in each node in full view mode.
+  $node = $variables['node'];
+  if ($variables['view_mode'] == 'full') {
+    // We define a library called favorite/favorite, the module requires this library.
+    // To let Drupal know where the library is, we create the file dev_favorite.libraries.yml.
+    // This library will define/hold all the JS we need in the module.
+    $variables['#attached']['library'][] = 'favorite/favorite';
+    $variables['content']['favorite'] = array(
+    '#markup' => '<div id="favorite"></div>',
+    );
+  }
+}
