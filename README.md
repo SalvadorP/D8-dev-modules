@@ -14,16 +14,17 @@ Code got from [Zivtech Getting started with React and D8](https://www.zivtech.co
 ##### Favorite Controller
 This controller provides an interface for getting the Data, it receives the node and responds in JSON format with the user related data like user_uid, node_type and if it's a favorited node.
 
-#### dev_favorites.module
+#### Other files
+##### dev_favorites.module
 Adds a div with the id favorite in each node in full view mode.
 Defines a library called favorite/favorite, the module will require this library.
 To let Drupal know where the library is, the file dev_favorite.libraries.yml is created.
 This library will define/hold all the JS we need in the module.
 
-#### dev_favorites.libraries.yml
+##### dev_favorites.libraries.yml
 Defines the route of the JS libraries.
 
-#### dev_favorites.routing.yml
+##### dev_favorites.routing.yml
 Defines the route to get the favorite data
 
 
